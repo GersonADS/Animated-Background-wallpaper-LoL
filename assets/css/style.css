@@ -2,8 +2,10 @@
 
 body
 {
+    position: relative;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    background:black;
 }
 
 .container
@@ -12,6 +14,44 @@ body
     position: relative;
     min-height: 100vh;
     background: #333;
+    animation: background 1s ease-in-out;
+}
+
+.container-arrows
+{
+ position: absolute;
+ display: flex;
+ z-index: 1;
+ justify-content: space-between;
+ align-items: center;
+ height: 100vh;
+ min-width: 100%;
+ padding: 2rem;
+}
+.container-arrows
+.arrow 
+{
+    cursor: pointer;
+
+}
+
+.container-arrows
+.arrow-left
+{
+ transform: rotate(180deg);
+ animation: arrow-left 1s;
+}
+
+.container-arrows
+.arrow-right
+{
+ animation: arrow-right 1s;   
+}
+
+.container-arrows
+img
+{
+    width: 100px;
 }
 
 
@@ -45,8 +85,29 @@ p
 }
 
 
-@-webkit-keyframes text-opacity {
+@-webkit-keyframes text-opacity
+{
     0%{
         opacity: 0;
     }
+}
+
+@-webkit-keyframes background 
+{
+    0%{
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes arrow-left 
+{
+ 0%{
+    opacity: 0;
+ }
+}
+@-webkit-keyframes arrow-right 
+{
+ 0%{
+    opacity: 0;
+ }
 }
