@@ -39,13 +39,14 @@ body
 .arrow-left
 {
  transform: rotate(180deg);
- animation: arrow-left 1s;
+ animation: arrow-left-move 1.5s ease-in-out;
 }
 
 .container-arrows
 .arrow-right
-{
- animation: arrow-right 1s;   
+{ 
+ animation: arrow-right-move 1.5s ease-in-out;  
+ animation-iteration-count: infinite; 
 }
 
 .container-arrows
@@ -99,15 +100,31 @@ p
     }
 }
 
-@-webkit-keyframes arrow-left 
+@-webkit-keyframes arrow-left-move
 {
- 0%{
-    opacity: 0;
- }
+    0%
+    {
+        opacity: 70%;
+        margin-right: 0;
+    }
+    50%
+    {
+        opacity: 90%;
+        margin-right: 10px;
+    }
 }
-@-webkit-keyframes arrow-right 
+
+@-webkit-keyframes arrow-right-move 
 {
- 0%{
-    opacity: 0;
- }
+    0%
+    {
+        opacity: 70%;
+        margin-right: 0;
+    }
+    50%
+    {
+        opacity: 90%;
+        margin-right: 10px;
+    }
+  
 }
