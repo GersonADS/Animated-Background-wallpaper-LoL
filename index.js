@@ -12,6 +12,12 @@ let BackgroundVideos = [
     './assets/video/y2meta.com-Desktop Wallpaper Coven Ahri-(1080p60).mp4',
 ];
 
+let ReponsiveImages = [
+    'https://image7.uhdpaper.com/wallpaper-hd/dark-cosmic-lux-and-cosmic-lux-lol-uhdpaper.com-hd-7.1533.jpg',
+    'https://images5.alphacoders.com/680/680381.png',
+    'https://cdna.artstation.com/p/assets/images/images/040/446/644/4k/huyy-nguyen-pepeno-2500x1250.jpg?1628867790'
+];
+
 let Messages = [
     `<h1>Lux</h1>
     <h2>❝the Lady of Luminosity❞</h2>
@@ -46,9 +52,17 @@ let index = 0;
     if(index<= 0)index =3;
     index--;
     Text_.innerHTML = `${Messages[index]}`;
-    BackgroundChange.src = `${BackgroundVideos[index]}`;
-    SoundChange.src = `${BackgroundMusics[index]}`
 
+    if(window.document.innerWindth >= 950){
+        BackgroundChange.src = `${BackgroundVideos[index]}`;
+    }
+     else 
+     {
+        BackgroundChange.style.display ='none'
+     }
+
+    SoundChange.src = `${BackgroundMusics[index]}`
+    
     let $Arrow_left_image = document.querySelector('#arrow-left-image');
     $Arrow_left_image.style.transform='scale(70%)';
 
