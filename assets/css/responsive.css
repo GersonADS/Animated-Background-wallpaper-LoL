@@ -1,0 +1,15 @@
+@media (max-width:660px)
+{
+   
+.container
+{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.text
+{
+    top: 60%;
+}
+}
