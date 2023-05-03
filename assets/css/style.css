@@ -13,7 +13,7 @@ body
     text-align: center;
     position: relative;
     min-height: 100vh;
-    background: #333;
+    background: black;
     animation: background 1s ease-in-out;
 }
 

@@ -10,7 +10,7 @@ let BackgroundVideos = [
     './assets/video/y2meta.com-Cosmic and Dark Cosmic Lux _ Login Screen - League of Legends (Fanmake)-(1080p60).mp4',
     './assets/video/y2meta.com-(League of Legends) Blood Moon Yasuo _Animated_ Splash art-(1080p).mp4',
     './assets/video/y2meta.com-Desktop Wallpaper Coven Ahri-(1080p60).mp4',
-]
+];
 
 let Messages = [
     `<h1>Lux</h1>
@@ -31,21 +31,30 @@ let Messages = [
 ];
 
 let BackgroundMusics = [
-    './assets/audio/y2meta.com - Mystery – GoSoundtrack (No Copyright Music) (128 kbps).mp3',
-    './assets/audio/y2meta.com - Mystery – GoSoundtrack (No Copyright Music) (128 kbps).mp3',
+    './assets/audio/y2meta.com - Interstellar Main Theme - Hans Zimmer (128 kbps).mp3',
+    './assets/audio/y2meta.com - Most Epic Battle Music Ever_ _Deadwood_ — Really Slow Motion (320 kbps).mp3',
     './assets/audio/y2meta.com - Mystery – GoSoundtrack (No Copyright Music) (128 kbps).mp3'
-]
+];
 
-let index =0;
+
+
+let index = 0;
 
 ;$Arrow_left
 .addEventListener
 ('click',()=>{
     if(index<= 0)index =3;
     index--;
-    BackgroundChange.src = `${BackgroundVideos[index]}`;
     Text_.innerHTML = `${Messages[index]}`;
-    console.log(`arrowleft `+index)
+    BackgroundChange.src = `${BackgroundVideos[index]}`;
+    SoundChange.src = `${BackgroundMusics[index]}`
+
+    let $Arrow_left_image = document.querySelector('#arrow-left-image');
+    $Arrow_left_image.style.transform='scale(70%)';
+
+    let time = setTimeout(()=>{
+        $Arrow_left_image.style.transform='scale(100%)';
+    },100);
 });
 
 ;$Arrow_right
@@ -53,7 +62,15 @@ let index =0;
 ('click',()=>{
     index++;
     if(index>= 3)index =0;
-    BackgroundChange.src = `${BackgroundVideos[index]}`
     Text_.innerHTML = `${Messages[index]}`;
-    console.log(`arrowRight `+index)
+    BackgroundChange.src = `${BackgroundVideos[index]}`
+    SoundChange.src = `${BackgroundMusics[index]}`
+
+    let $Arrow_right_image = document.querySelector('#arrow-right-image');
+    $Arrow_right_image.style.transform='scale(70%)';
+
+    let time = setTimeout(()=>{
+        $Arrow_right_image.style.transform='scale(100%)';
+    },100);
+
 });
