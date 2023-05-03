@@ -21,9 +21,6 @@ video
     min-height: 100vh;
     background: black;
     animation: background 1s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container-arrows

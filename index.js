@@ -51,16 +51,9 @@ let index = 0;
 ('click',()=>{
     if(index<= 0)index =3;
     index--;
+
     Text_.innerHTML = `${Messages[index]}`;
-
-    if(window.document.innerWindth >= 950){
-        BackgroundChange.src = `${BackgroundVideos[index]}`;
-    }
-     else 
-     {
-        BackgroundChange.style.display ='none'
-     }
-
+    BackgroundChange.src = `${BackgroundVideos[index]}`;
     SoundChange.src = `${BackgroundMusics[index]}`
     
     let $Arrow_left_image = document.querySelector('#arrow-left-image');
@@ -69,6 +62,9 @@ let index = 0;
     let time = setTimeout(()=>{
         $Arrow_left_image.style.transform='scale(100%)';
     },100);
+
+    console.log(innerWidth)
+
 });
 
 ;$Arrow_right
@@ -76,6 +72,7 @@ let index = 0;
 ('click',()=>{
     index++;
     if(index>= 3)index =0;
+
     Text_.innerHTML = `${Messages[index]}`;
     BackgroundChange.src = `${BackgroundVideos[index]}`
     SoundChange.src = `${BackgroundMusics[index]}`
@@ -86,5 +83,7 @@ let index = 0;
     let time = setTimeout(()=>{
         $Arrow_right_image.style.transform='scale(100%)';
     },100);
+
+    console.log('Este é o width ' , innerWidth)
 
 });
